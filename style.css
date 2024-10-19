@@ -268,6 +268,23 @@ html {
   .calbox {
     width: 99% !important;
   }
+  .heromain{
+   padding-top: 70px;
+  }
+  .heromain h1 {
+   font-size: 1.7rem !important;
+   text-align: center;
+  }
+  .heromain p{
+   font-size: 1rem !important;
+   text-align: center;
+  }
+  .heromain h1 br{
+   display: none !important;
+  }
+  .heromain p br{
+   display: none !important;
+  }
 }
 
 #result {
