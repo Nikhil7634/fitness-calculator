@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100">
+    <nav
+      class="bg-white :bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 :border-gray-600"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span class="text-3xl font-bold">VEx</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            style="background: transparent !important; border: 1px solid black"
+            type="button"
+            class="text-black rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-3 text-center"
+          >
+            <a href="./about.html"> Get started </a>
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 :text-gray-400 :hover:bg-gray-700 :focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white :bg-gray-800 md: :bg-gray-900 :border-gray-700"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="block py-2 px-3 text-black rounded md:bg-transparent md:text-black md:p-0 md: :text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >About</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="./contact.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center uppercase justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto -:text-white md:-:hover:text-blue-500 -:focus:text-white -:border-gray-700 -:hover:bg-gray-700 md:-:hover:bg-transparent"
+              >
+                ALL Calculator
+                <svg
+                  style="margin-top: 5px"
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 flex hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 -:bg-gray-700 -:divide-gray-600 mydrop"
+                data-popper-placement="bottom"
+                style="
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  margin: 0px;
+                  transform: translate3d(874.5px, 60.5px, 0px);
+                "
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 -:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="./pointCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Points Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./AnorexicBMICalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Anorexic BMI Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./OverweightCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Overweight Calculator</a
+                    >
+                  </li>
+                  
+                  <li>
+                    <a
+                      href="./PaceCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Pace Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BodySurfaceAreaCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Surface Area Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./BodyTypeCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Type Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./FatIntakeCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Fat Intake Calculator</a
+                    >
+                  </li>
+                   
+                  <li>
+                    <a
+                      href="./ProteinCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Protein Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CarbohydrateCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Carbohydrate Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CaloriesBurnedCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Calories Burned Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./HealthyWeightCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Healthy Weight Calculator
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./LeanBodyMassCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Lean Body Mass Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./ArmyBodyFatCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Army Body Fat Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BMRCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >BMR Calculator
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./BodyFatCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Fat Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BMICalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >BMI Calculator</a
+                    >
+                  </li>
+                   
+                  <li>
+                    <a
+                      href="./CalorieCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Calorie Calculator</a
+                    >
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+      <section
+        class="rounded-3xl overflow-hidden mb-12"
+        style="
+          height: 70vh;
+          background: url(./images/hero.jpg) no-repeat;
+          background-size: cover;
+          margin-top: 60px;
+        "
+      >
+        <div
+          class="flex flex-col md:flex-row items-center mt-20"
+          style="align-items: center"
+        >
+          <div
+            class="md:w-2/ p-8   py-20"
+            style="
+              border-radius: 0%;
+              border-top-right-radius: 100px;
+               
+            "
+          >
+            <h1 class="text-7xl font-normal text-primary mb-4">
+              Fitness & Health <br />
+              Progress Calculator
+            </h1>
+            <p class="text-gray-700 mb-6 text-xl">
+              Accurately track your fitness metrics and health goals <br />
+              with our easy-to-use fitness calculator tool.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="toollist" id="toollists">
+        <div class="singletools">
+          <a href="./pointCalculator.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBqaGKE7gblwVgR_npI5PJ11ez2abMhsjgsYgOu2LQWbuwjzTLWBinh5W1eljuvddYUgjYXIzPwnFGbZmOIufSLq2i3f5zv-VMc0sk15sNTaxLV1u5K1A7P17WvkonvjNONS-KqRdQB2Azr3Udl5YybLnNx_hdDQ0J-PF_jKAK_WcJjaRFkCujnOJM6hbu/s320/Untitled%20design%20(10).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+             
+            </div>
+            <h2>Points Calculator</h2>
+
+            <p>
+              Points Calculator helps users track their daily food intake by
+              calculating points based on nutritional values for weight
+              management.
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./AnorexicBMICalculator.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgelWLw3SepTuP3Dz9rDpRy8tCZqpShvrHdz1EMdRMQk54RWkgPkxOf2bRP7HRgs7FCMMu-4DP0Vv1-kckbIfCSznmgumMD3v6ItdS7l-uS4rpKaAG3ySu29rhNLuI4QqP46FmUXG9UCtFI1yRQaN9v4JqTgrAxfDgc1WOr8G6bH3wweeGeNMqzmLnPk-Ka/s320/Untitled%20design%20(11).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+              
+            </div>
+            <h2>Anorexic BMI Calculator</h2>
+
+            <p>
+              The Anorexic BMI Calculator helps determine if an individual's body mass index (BMI) falls within the anorexic range for health monitoring.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./OverweightCalculator.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfA1SuN44azOcKomgY6gxDYhIBrlwpFqRfApjUhNg1la_8ExpFDy4fZO6D5Hhg8lZOq0G491gXpqBWWOlSKZt5aGOwv4dl9_44Wwyoa-eSZLWPDyCPzhl7Ymwe5wjHHkEa-EciRijYmhqMx5-4qOMMuiIAlQE-E-bnIL1YrYDvCxfYsJXYnjUeh2igJKZm/s320/Untitled%20design%20(12).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+              
+            </div>
+            <h2>Overweight Calculator</h2>
+
+            <p>
+              The Overweight Calculator estimates if an individual's body mass index (BMI) exceeds the healthy range, indicating potential weight-related risks.
+
+
+
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./PaceCalculator.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNPnyTI_kH0OI-6dscHjA2fQ-OddsOn5KTKqPN6XWhihRDkc0YhT3A2z43r6ZVkHhIgnXsTMpttSBHIc74mCz-Og6ahu8C_Gm2drFSUIczUiKoEtJK6NoCU1YjQ28vFszm9sO5QSmcwBMmZAKcrNiEguNT6QAblAll5zusBJ1jhSrWbAPrlQVsjfxYFk5L/s320/Untitled%20design%20(13).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+              
+            </div>
+            <h2>Pace Calculator</h2>
+
+            <p>
+              The Pace Calculator determines your speed per mile or kilometer during running or walking, helping to track and optimize performance.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./BodySurfaceAreaCalculator.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFQTgrDu7r68ZGPRbQVlgURa3WOlcsdJcCNrigw5sPkWpC0xbBXUXYwkJUwOJ94fjhuigQd9dnv6tyltVJJHWgti8wfvRpCLwK_P5wTBsj55EjLW0sidHKeGrPisnBFFTSOQfHaNUlgPDPxhVnCUxFyw2_ZVGgCLnXbaXFrG1UHaVtG1LJPd28U7D5F6s/s320/Untitled%20design%20(15).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+              
+            </div>
+            <h2>Body Surface Area Calculator</h2>
+
+            <p>
+              The Body Surface Area (BSA) Calculator estimates the total surface area of the human body, useful for medical dosing calculations.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+        <div class="singletools">
+          <a href="./pdftoword.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXjc7XiULzZSYuXDcizYYk_FcmY1LtTt05eZy7ksWV4bdZhTuPoU2prHC0wY0hZ31d4ZPk4B1PdKqiUoq-i58mULRrYamYArPb4vIwgIV5WQEu31EPaU4bCEsVHlmhkZ58XLSA39dX-fnZVineG36LH1kHDLR-MGF-2XKfA5mdvRCkz8o5s04M7iGF5Ck/s320/Untitled%20design%20(16).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+               
+            </div>
+            <h2>Body Type Calculator</h2>
+
+            <p>
+              The Body Type Calculator assesses body shape and composition, helping individuals understand their physique for tailored fitness and nutrition plans.
+
+
+
+
+
+
+
+            </p>
+
+            <button>Check Out</button>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftoxml.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnaiGJUZxYJ-oBgzQ6ve47783Rf70kpvjFnYJdI8fS1w7svet011FWTb_VI8BiTIJ6INqW-KcrnqdZwCAKk8QwRa4O_YhglW1M7buA6kcIjBx9zQbVRKzVPa73PfAW92a4Q9oA6oI8Lo9_Gkd4cmrOf5lHYn6l-v5elGqHJ7LrJOXjM4DhfwIwVWUvf3g/s320/Untitled%20design%20(19).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+              
+            </div>
+            <h2>Fat Intake Calculator</h2>
+
+            <p>
+              The Fat Intake Calculator estimates daily fat consumption, helping individuals manage dietary fat levels for weight loss and overall health.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pdftozip.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbLK9yKtuyuJd1vU2Sq_f2rqopG3yV4MVcMB2YMc2l0ts-qq9env8jyrJbG95iQ23kOkUvmu98EPGEh5BY_fUOD5_87XXiRvmsQNit7Xs3QPakq0lx8NU5F-w0wmSAQkhQ-IFABoqXFortL4Lo1Ua5pXU6otVwQKaltPIhV4lnN_ERRAgToAwnArXLiDw/s320/Untitled%20design%20(18).png "
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+              
+            </div>
+            <h2>Protein Calculator</h2>
+
+            <p>
+              The Protein Calculator determines daily protein needs based on individual factors, aiding in meal planning for fitness, muscle gain, or weight loss.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+        <div class="singletools">
+          <a href="./pdftowebp.html">
+            <div class="imgbox">
+              <img
+                src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi56JbSofb4E3MucGlsMYqr0ziNSOqYc3M2KvddRNGBolHGoHu8SOPJs7ye2FQHRQCnTBUh0d92dtzVzzZTMNkpMxpRhAAjK2e_8hwYjeygVGpurH9mQJWbDSsRGLVTZilDLn8nH45ewBCw1AIpg8g_tN6PP8YbSLnoT2OJDLS8LN6rObcvAzvrLc_qYHk/s320/Untitled%20design%20(20).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+               
+            </div>
+            <h2>Carbohydrate Calculator</h2>
+
+            <p>
+              The Carbohydrate Calculator calculates daily carbohydrate intake based on personal goals, activity level, and dietary preferences to support energy needs.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+        <div class="singletools">
+          <a href="./pdftotext.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBOjtl7IWmHZFeQSOs2gdeUe3sVuaQhiDhDyEpPoOjDN265gllmEMTPwwBJG2XxHdOC2-Fe6gZceVyF9rlLJ0mOX0UtQtzi_8nTz2tc0ZaZINjOiYfOGY18iLS08t2XDPv0KP_1vJD4mP6CT8J9iduwyb3nlXrnvQ8-4DG85MLUKcqAyTL1SQaRJObTmk/s320/Untitled%20design%20(17).png "
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+               
+            </div>
+            <h2>Calories Burned Calculator</h2>
+
+            <p>
+              The Calories Burned Calculator estimates the number of calories burned during various activities, helping individuals track energy expenditure for weight management.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+        <div class="singletools">
+          <a href="./csvto.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHq3Wr-rhkEGy1QWghE4-0UqsJ4sROZTtw8OLq_zgDX4zSvT6oGvyc4zIbD5AZ-Oer3UuHuJcnf7QTpqC8Zoicgba47qzMMHm6z94jrvChu_o27ZPL_vKKnChWzjUVJmRV4Zs6lEkHU_Lf_P2k2GQHI9d19wIjPWDomHitWMTzq_4XSCO19jQQWje4k3w/s320/Untitled%20design%20(21).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+               
+            </div>
+            <h2>Healthy Weight Calculator</h2>
+
+            <p>
+              The Healthy Weight Calculator assesses ideal weight ranges based on height, age, and gender, promoting awareness of healthy body weight for overall well-being.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+        <div class="singletools">
+          <a href="./excelto.html">
+            <div class="imgbox">
+              <img
+                src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjj48hHKdmvi_cjUEi7Cay73zFbuOmIGsfh22C1rzPZzEFQP8Y1MkWenKwGe9PGyB_XjY-0ybKxe9-lC5OXZWIwABbTG2DGTT23HzMqVt0FFQU6QhFnjtg_JQcl1C8KRtleVJUGSqS3xAxNVLCD87RinBAZHfSOtlvY-Y-i9matA3USBdB6S_F5yyYBjDY/s320/Untitled%20design%20(22).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+
+               
+            </div>
+            <h2>Lean Body Mass Calculator</h2>
+
+            <p>
+              The Lean Body Mass Calculator estimates the amount of lean mass in the body, helping individuals tailor fitness and nutrition plans for muscle growth.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./htmlto.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-6VurgCzMb9y8NC_vLmD3QwTRTyh6R380DqUozfLd7Yyp2MdwQkUG_UZQhaXjLknGoMxozP1HU5azf5l1KTrKaqove7FwbBEdPWAf3jKvjpT3mCsn-kT0kb-_SZt8YeU2NdcluixVhz51N6r6F1zaRGQGesQMvDKgMk2_fXy7DZ2845oJBZpc8mLusvc/s320/Untitled%20design%20(23).png "
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+              
+            </div>
+            <h2>Army Body Fat Calculator</h2>
+
+            <p>
+              The Army Body Fat Calculator evaluates body fat percentage based on measurements and military standards, aiding personnel in maintaining fitness requirements.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+        <div class="singletools">
+          <a href="./jpgto.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv_X3VwapC-g6bElOkrR2ifWHWygGCwxvs4CA00-mBS1Sm8TDA3DUFeBuWxVyj9R9mTOkaiGsvI2JhHvXHd3Z8ThjzcjvrnQLDeC6DluHgOSlhUGR64zpJIEDL4FKJP4ArofI5yPbTrk_E45X1rbRncFHdKqKfmqQFaozacwB6tPnOHauatGXkz86b24k/s320/Untitled%20design%20(26).png "
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+               
+            </div>
+            <h2>BMR Calculator</h2>
+
+            <p>
+              The BMR Calculator estimates basal metabolic rate, indicating the number of calories burned at rest, essential for weight management and nutrition planning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+        <div class="singletools">
+          <a href="./jsonto.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgU2I5gr5O4i9iTk0VS5ZbT7p0U_yC5t-D6CtVSaSDdjYX2oS2SCBLoZK1bLFZEDZJZxgoUQQ8yeY8h3szDrMKX3qu-bhszi3ZI2nXTnUmRbxdZb7NgaIY0_MUJyJayG_8jJcP7e5WJ24NVc1bYoFIwyKtADf1otrxWvk-HWLAiawJQsZtYytFdAUd4SZg/s320/Untitled%20design%20(25).png "
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+               
+            </div>
+            <h2>Body Fat Calculator</h2>
+
+            <p>
+              The Body Fat Calculator estimates body fat percentage using various methods, helping individuals monitor progress in fitness and health goals.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+        <div class="singletools">
+          <a href="./pngto.html">
+            <div class="imgbox">
+              <img
+                src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5ibTYetpzBVD2ZJSalAh_zhHPcPXXm-ayd6FdpYPPF4xhibTBLHTkT2G7WTJqk4TC5BL0-aaccxmqO0IOJNTBVGPC7TiPsBsOpDwETWucv2t6KiYojLUZP79LWjTlqB1bnOm-st6LWypvuZBA-Mj5D0R_nIEkEZqVeEcPKBbcSl_huMbNmWl_fOpTOJ8/s320/Untitled%20design%20(24).png"
+                alt=""
+              />
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+               
+            </div>
+            <h2>BMI Calculator</h2>
+
+            <p>
+              The BMI Calculator calculates body mass index by assessing weight relative to height, offering insights into potential health risks associated with body weight.
+
+
+
+
+
+
+
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+        <div class="singletools">
+          <a href="./speechto.html">
+            <div class="imgbox">
+              <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3ich1tNeLG6X2SCWh3f4zD7ME6Dfbjt4xVjAea4msttMd07pVwawKvWugphgMT08ivEnNzbdocMu4rODzU_VwaKo6M9RMiK8RtUgvpMTs5lWq1OCYogyXNoYz2XlnnhvcTY9NrDBkOvMIZTG6epTwR5KLxqO93feCfMICQrujwNNdgrc9udmeyjrJwhc/s320/Untitled%20design%20(27).png "
+                alt=""
+              />
+
+              <img
+                style="height: 15px"
+                src="https://cdn-icons-png.flaticon.com/512/44/44621.png"
+                alt=""
+              />
+               
+            </div>
+            <h2>Calorie Calculator
+
+            </h2>
+
+            <p>
+              The Calorie Calculator estimates daily caloric needs based on activity level, age, gender, and goals, aiding in weight management and nutrition planning.
+            </p>
+            <button>Check Out</button>
+          </a>
+        </div>
+
+       
+        
+        
+      </div>
+    </main>
+
+    
+    <section class="lg:pt-20 pt-0 h-full">
+      <div
+        class="rounded-2xl bg-indigo-50 py-10 overflow-hidden m-5 lg:m-0 2xl:py-16 xl:py-8  lg:rounded-tl-2xl lg:rounded-bl-2xl ">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-14 items-center lg:grid-cols-12 lg:gap32">
+            <div class="w-full xl:col-span-5 lg:col-span-6 2xl:-mx-5 xl:-mx-0">
+              <div class="flex items-center text-sm font-medium text-gray-500 justify-center lg:justify-start">
+                <span class="bg-indigo-600 py-1 px-3 rounded-2xl text-xs font-medium text-white mr-3 ">#1</span>
+                ABOUT US
+              </div>
+              <h1 class="py-8 text-center text-gray-900 font-bold font-manrope text-5xl lg:text-left leading-[70px]">
+                Track Your Health, Nutrition, and <span class="text-indigo-600">Goals</span>
+              </h1>
+              <p class=" text-gray-500 text-lg text-center lg:text-left">
+                Welcome to our Fitness Calculator tool, your all-in-one solution for tracking and optimizing your health and fitness goals. We understand that staying fit involves more than just exercise—it’s about balancing your diet, monitoring your progress, and making informed decisions about your body’s needs.
+              </p>
+             
+              <div class="flex items-center flex-col lg:flex-row mt-10">
+                <div class="flex items-center">
+                  <img src="https://pagedone.io/asset/uploads/1694846673.png" alt="Rounded image "
+                    class="border-2 border-solid border-indigo-50 rounded-full relative z-50 object-cover" />
+                  <img src="https://pagedone.io/asset/uploads/1694846691.png" alt="Rounded image"
+                    class="border-2 border-solid border-indigo-50 rounded-full relative z-30 -ml-3 object-cover" />
+                  <img src="https://pagedone.io/asset/uploads/1694846704.png" alt="Rounded image"
+                    class="border-2 border-solid border-indigo-50 rounded-full relative z-20 -ml-3 object-cover" />
+                </div>
+                <span class="mt-3 text-base text-gray-600 font-medium lg:ml-3">People have joined</span>
+              </div>
+            </div>
+            <div class="w-full xl:col-span-7  lg:col-span-6 block">
+              <div class="w-full  sm:w-auto lg:w-[60.8125rem] xl:ml-16">
+                <img style="opacity: 1;filter: brightness(70%);" src="https://cdn.prod.website-files.com/61a7bda474dfe11266bb0b74/637d17bd73f4d58aed616c69_ATC-spottswood_nov2022-5.png" alt="Dashboard image" class="rounded-l-3xl object-cover"
+                  class="w-full  lg:h-auto ">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="bg-white   :bg-gray-900">
+      <div class="container px-6 py-12 mx-auto">
+          <div>
+              <p class="font-medium text-blue-500   :text-blue-400">Contact us</p>
+  
+              <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl   :text-white">We’d love to hear from you</h1>
+  
+              <p class="mt-3 text-gray-500   :text-gray-400">Our friendly team is always here to chat.</p>
+          </div>
+  
+          <div class="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div class="p-4 rounded-lg bg-blue-50 md:p-6   :bg-gray-800">
+                  <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80   :bg-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                  </span>
+  
+                  <h2 class="mt-4 text-base font-medium text-gray-800   :text-white">Chat to sales</h2>
+                  <p class="mt-2 text-sm text-gray-500   :text-gray-400">Speak to our friendly team.</p>
+                  <p class="mt-2 text-sm text-blue-500   :text-blue-400">hello@merakiui.com</p>
+              </div>
+  
+              <div class="p-4 rounded-lg bg-blue-50 md:p-6   :bg-gray-800">
+                  <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80   :bg-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
+                  </span>
+                  
+                  <h2 class="mt-4 text-base font-medium text-gray-800   :text-white">Chat to support</h2>
+                  <p class="mt-2 text-sm text-gray-500   :text-gray-400">We’re here to help.</p>
+                  <p class="mt-2 text-sm text-blue-500   :text-blue-400">Start new chat</p>
+              </div>
+  
+              <div class="p-4 rounded-lg bg-blue-50 md:p-6   :bg-gray-800">
+                  <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80   :bg-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
+                  </span>
+                  
+                  <h2 class="mt-4 text-base font-medium text-gray-800   :text-white">Visit us</h2>
+                  <p class="mt-2 text-sm text-gray-500   :text-gray-400">Visit our office HQ..</p>
+                  <p class="mt-2 text-sm text-blue-500   :text-blue-400">100 Smith Street Collingwood VIC 3066 AU</p>
+              </div>
+  
+              <div class="p-4 rounded-lg bg-blue-50 md:p-6   :bg-gray-800">
+                  <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80   :bg-gray-700">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                      </svg>
+                  </span>
+                  
+                  <h2 class="mt-4 text-base font-medium text-gray-800   :text-white">Call us</h2>
+                  <p class="mt-2 text-sm text-gray-500   :text-gray-400">Mon-Fri from 8am to 5pm.</p>
+                  <p class="mt-2 text-sm text-blue-500   :text-blue-400">+1 (555) 000-0000</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+
+
+  <footer class="bg-[#eef2ff]   :bg-gray-900">
+    <div class="container px-6 py-8 mx-auto">
+        <div class="flex flex-col items-center text-center">
+            <a href="./index.html">
+              <span class="text-4xl font-bold">VEx</span>
+
+             </a>
+
+            <div class="flex flex-wrap justify-center mt-6 -mx-4">
+                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500   :text-gray-300   :hover:text-blue-400" aria-label="Reddit"> Home </a>
+                
+                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500   :text-gray-300   :hover:text-blue-400" aria-label="Reddit"> About </a>
+                
+                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500   :text-gray-300   :hover:text-blue-400" aria-label="Reddit"> Contact Us</a>
+
+ 
+             </div>
+
+        </div>
+
+        <hr class="my-6 border-gray-200 md:my-10   :border-gray-700" />
+
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <p class="text-sm text-gray-500   :text-gray-300">© Copyright 2024. All Rights Reserved.</p>
+
+            <div class="flex -mx-2">
+                <a href="#" class="mx-2 text-gray-600 transition-colors duration-300   :text-gray-300 hover:text-blue-500   :hover:text-blue-400" aria-label="Reddit">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM6.807 10.543C6.20862 10.5433 5.67102 10.9088 5.45054 11.465C5.23006 12.0213 5.37133 12.6558 5.807 13.066C5.92217 13.1751 6.05463 13.2643 6.199 13.33C6.18644 13.4761 6.18644 13.6229 6.199 13.769C6.199 16.009 8.814 17.831 12.028 17.831C15.242 17.831 17.858 16.009 17.858 13.769C17.8696 13.6229 17.8696 13.4761 17.858 13.33C18.4649 13.0351 18.786 12.3585 18.6305 11.7019C18.475 11.0453 17.8847 10.5844 17.21 10.593H17.157C16.7988 10.6062 16.458 10.7512 16.2 11C15.0625 10.2265 13.7252 9.79927 12.35 9.77L13 6.65L15.138 7.1C15.1931 7.60706 15.621 7.99141 16.131 7.992C16.1674 7.99196 16.2038 7.98995 16.24 7.986C16.7702 7.93278 17.1655 7.47314 17.1389 6.94094C17.1122 6.40873 16.6729 5.991 16.14 5.991C16.1022 5.99191 16.0645 5.99491 16.027 6C15.71 6.03367 15.4281 6.21641 15.268 6.492L12.82 6C12.7983 5.99535 12.7762 5.993 12.754 5.993C12.6094 5.99472 12.4851 6.09583 12.454 6.237L11.706 9.71C10.3138 9.7297 8.95795 10.157 7.806 10.939C7.53601 10.6839 7.17843 10.5422 6.807 10.543ZM12.18 16.524C12.124 16.524 12.067 16.524 12.011 16.524C11.955 16.524 11.898 16.524 11.842 16.524C11.0121 16.5208 10.2054 16.2497 9.542 15.751C9.49626 15.6958 9.47445 15.6246 9.4814 15.5533C9.48834 15.482 9.52348 15.4163 9.579 15.371C9.62737 15.3318 9.68771 15.3102 9.75 15.31C9.81233 15.31 9.87275 15.3315 9.921 15.371C10.4816 15.7818 11.159 16.0022 11.854 16C11.9027 16 11.9513 16 12 16C12.059 16 12.119 16 12.178 16C12.864 16.0011 13.5329 15.7863 14.09 15.386C14.1427 15.3322 14.2147 15.302 14.29 15.302C14.3653 15.302 14.4373 15.3322 14.49 15.386C14.5985 15.4981 14.5962 15.6767 14.485 15.786V15.746C13.8213 16.2481 13.0123 16.5208 12.18 16.523V16.524ZM14.307 14.08H14.291L14.299 14.041C13.8591 14.011 13.4994 13.6789 13.4343 13.2429C13.3691 12.8068 13.6162 12.3842 14.028 12.2269C14.4399 12.0697 14.9058 12.2202 15.1478 12.5887C15.3899 12.9572 15.3429 13.4445 15.035 13.76C14.856 13.9554 14.6059 14.0707 14.341 14.08H14.306H14.307ZM9.67 14C9.11772 14 8.67 13.5523 8.67 13C8.67 12.4477 9.11772 12 9.67 12C10.2223 12 10.67 12.4477 10.67 13C10.67 13.5523 10.2223 14 9.67 14Z">
+                        </path>
+                    </svg>
+                </a>
+
+                <a href="#" class="mx-2 text-gray-600 transition-colors duration-300   :text-gray-300 hover:text-blue-500   :hover:text-blue-400" aria-label="Facebook">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2.00195 12.002C2.00312 16.9214 5.58036 21.1101 10.439 21.881V14.892H7.90195V12.002H10.442V9.80204C10.3284 8.75958 10.6845 7.72064 11.4136 6.96698C12.1427 6.21332 13.1693 5.82306 14.215 5.90204C14.9655 5.91417 15.7141 5.98101 16.455 6.10205V8.56104H15.191C14.7558 8.50405 14.3183 8.64777 14.0017 8.95171C13.6851 9.25566 13.5237 9.68693 13.563 10.124V12.002H16.334L15.891 14.893H13.563V21.881C18.8174 21.0506 22.502 16.2518 21.9475 10.9611C21.3929 5.67041 16.7932 1.73997 11.4808 2.01722C6.16831 2.29447 2.0028 6.68235 2.00195 12.002Z">
+                        </path>
+                    </svg>
+                </a>
+
+                <a href="#" class="mx-2 text-gray-600 transition-colors duration-300   :text-gray-300 hover:text-blue-500   :hover:text-blue-400" aria-label="Github">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+                                              
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </body>
+</html>

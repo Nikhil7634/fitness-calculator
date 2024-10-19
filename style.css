@@ -1,0 +1,281 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+}
+
+.myanime {
+  animation: animate 5s alternate infinite;
+}
+@keyframes animate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.toolsection {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.half-section {
+  width: 75%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+}
+.toolheading {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.description {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+@media (max-width: 710px) {
+  .toolsection {
+    gap: 50px;
+    padding-block: 30px;
+  }
+  .half-section {
+    width: 95%;
+  }
+}
+
+.toolbox {
+  padding-block: 40px;
+  width: 60%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  border: 1px solid black;
+  min-height: 200px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  padding-inline: 20px;
+}
+.downloadbutton {
+  border: 1px solid black;
+  padding: 12px 28px;
+  border-radius: 50px;
+}
+
+.mydrop {
+  width: 100% !important;
+  padding: 50px;
+}
+
+.mydrop ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.mydrop ul li a {
+  padding: 12px 25px;
+  border-radius: 50px;
+  color: black;
+  box-shadow: rgba(50, 50, 93, 0.21) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.mydrop ul li a:hover {
+  color: black;
+}
+
+.toollist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-rows: auto;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (min-width: 1068px) {
+  .toollist {
+    grid-template-columns: repeat(5, minmax(240px, 1fr));
+  }
+}
+.singletools {
+  min-height: 260px;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.279);
+  position: relative;
+}
+.singletools:nth-child(3n + 1) {
+  background: rgba(245, 245, 220, 0.429);
+}
+.singletools:nth-child(3n + 2) {
+  background: #eae1f6b5;
+}
+.singletools:nth-child(3n + 3) {
+  background: #eef2ff;
+}
+.singletools a {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.singletools a img {
+  height: 70px;
+  mix-blend-mode: multiply;
+}
+.singletools a h2 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.singletools a p {
+  font-size: 0.7rem;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.937);
+}
+
+.imgbox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+
+.imgbox img:nth-child(2) {
+  position: absolute;
+  background: white;
+  padding: 15px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  right: 10px;
+  transform: rotate(-45deg);
+  transition: 0.3s ease-out;
+  mix-blend-mode: normal;
+
+  border: 1px solid rgba(0, 0, 0, 0.242);
+}
+.singletools:hover .imgbox img:nth-child(2) {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 568px) {
+  .herobutton {
+    width: 100%;
+    display: flex;
+    flex-flow: column !important;
+    gap: 20px;
+  }
+  .herobutton a {
+    width: 60%;
+  }
+}
+
+@media (max-width: 567px) {
+  .mydrop {
+    padding: 0;
+    width: 100%;
+  }
+  #dropdownNavbar {
+    transform: translate3d(0px, 80px, 0px) !important;
+  }
+
+  .half-section {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .toolbox {
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0;
+  }
+  .mydrop ul {
+    padding-inline: 10px;
+  }
+  .mydrop ul li a {
+    padding: 8px 16px;
+    border-radius: 50px;
+    color: black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    zoom: 0.7;
+  }
+
+  .MYIMG {
+    width: 100% !important;
+  }
+}
+
+.singletools a button {
+  padding: 8px 20px;
+  background: white;
+  margin-top: 15px;
+  border-radius: 50px;
+  font-weight: 400;
+  border: 1px solid rgba(0, 0, 0, 0.242);
+}
+.calcsection {
+  min-height: 100vh;
+}
+.calbox {
+  width: 60% !important;
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+   justify-content: center;
+  margin: auto;
+   border-radius: 15px !important;
+  background-color: #fff;
+           
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.calbox > div{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   flex-wrap: wrap;
+}
+.calbox input {
+  height: 45px;
+  border: 1px solid black;
+  padding: 5px 20px;
+ 
+   border-radius: 50px;
+ }
+
+@media (max-width: 710px) {
+  .calbox {
+    width: 99% !important;
+  }
+}
+
+#result {
+   margin-top: 10px;
+   font-weight: bold;
+   text-align: center;
+   width: 100%;
+   display: grid;
+   place-items: center;
+   
+}
