@@ -114,6 +114,10 @@ html {
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.279);
   position: relative;
+  transition: 0.3s;
+}
+.singletools:hover{
+   transform: scale(1.05);
 }
 .singletools:nth-child(3n + 1) {
   background: rgba(245, 245, 220, 0.429);
@@ -269,7 +273,7 @@ html {
     background-size: 150% 250px !important;
   }
   .heromain {
-    padding-top: 210px !important;
+    padding-top: 190px !important;
   }
   .heromain h1 {
     font-size: 1.7rem !important;
@@ -298,7 +302,12 @@ html {
 
 .cont div {
   border: 1px solid rgba(0, 0, 0, 0.337);
-}
+  transition: 0.3s;
+ }
+.cont div:hover {
+   border: 1px solid rgba(0, 0, 0, 0.337);
+   transform: scale(1.05);
+ }
 .cont div:nth-child(odd) {
   background: rgba(245, 245, 220, 0.266);
 }
@@ -306,6 +315,10 @@ html {
   background: #eae1f6b5;
 }
 
+
+.privacy-po{
+   width: 90%;
+}
 @media (max-width: 510px) {
   .calbox {
     width: 99% !important;
@@ -314,4 +327,7 @@ html {
     background-position-x: 100% !important;
     background-size: 250% 250px !important;
   }
+  .privacy-po{
+   width: 100%;
+}
 }

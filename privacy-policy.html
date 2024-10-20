@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-0">
+    <nav
+      class="bg-white :bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 :border-gray-600"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span class="text-3xl font-bold">VEx</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            style="background: transparent !important; border: 1px solid black"
+            type="button"
+            class="text-black rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-3 text-center"
+          >
+            <a href="./about.html"> Get started </a>
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 :text-gray-400 :hover:bg-gray-700 :focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white :bg-gray-800 md: :bg-gray-900 :border-gray-700"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="block py-2 px-3 text-black rounded md:bg-transparent md:text-black md:p-0 md: :text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >About</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="./contact.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center uppercase justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto -:text-white md:-:hover:text-blue-500 -:focus:text-white -:border-gray-700 -:hover:bg-gray-700 md:-:hover:bg-transparent"
+              >
+                ALL Calculator
+                <svg
+                  style="margin-top: 5px"
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 flex hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 -:bg-gray-700 -:divide-gray-600 mydrop"
+                data-popper-placement="bottom"
+                style="
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  margin: 0px;
+                  transform: translate3d(874.5px, 60.5px, 0px);
+                "
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 -:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="./pointCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Points Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./AnorexicBMICalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Anorexic BMI Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./OverweightCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Overweight Calculator</a
+                    >
+                  </li>
+                  
+                  <li>
+                    <a
+                      href="./PaceCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Pace Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BodySurfaceAreaCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Surface Area Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./BodyTypeCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Type Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./FatIntakeCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Fat Intake Calculator</a
+                    >
+                  </li>
+                   
+                  <li>
+                    <a
+                      href="./ProteinCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Protein Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CarbohydrateCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Carbohydrate Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CaloriesBurnedCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Calories Burned Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./HealthyWeightCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Healthy Weight Calculator
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./LeanBodyMassCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Lean Body Mass Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./ArmyBodyFatCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Army Body Fat Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BMRCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >BMR Calculator
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./BodyFatCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Fat Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BMICalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >BMI Calculator</a
+                    >
+                  </li>
+                   
+                  <li>
+                    <a
+                      href="./CalorieCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Calorie Calculator</a
+                    >
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ 
+
+ 
+
+
+    <section class="flex justify-center  items-center min-h-screen bg-gray-100 sm:p-6 mt-20 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover mainpri">
+        <div class="container bg-white sm:w-[70%] rounded-lg shadow-lg p-8 privacy-po">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Privacy Policy for Valatara Explainer</h2>
+          <p class="text-gray-600 mb-4">At Fitness Calculator (https://fitness-calculatorrr.netlify.app/), we respect your privacy and are committed to safeguarding the personal information you provide. This Privacy Policy outlines our practices regarding the collection, use, and protection of your data. We encourage you to read this policy thoroughly to understand how we treat your personal information and the measures we take to protect it.</p>
+      
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">Entity Information</h3>
+          <p class="text-gray-600 mb-4">Valatara Explainer operates as an individual entity and is headquartered in Paghar, India. Our organization abides by all relevant data protection laws to ensure your privacy is respected and your information is kept secure. We are committed to transparency in our data processing activities and want you to feel confident when using our services.</p>
+      
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">Types of Information We Collect</h3>
+             <div class="container  bg-white">
+               <p class="text-gray-600 mb-4">At <strong>Valatara Explainer</strong>, we prioritize your privacy and are committed to protecting your personal information. We do not collect any personal information from our users.</p>
+          
+              <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-4">Information We Do Not Collect:</h3>
+              <ul class="list-disc list-inside text-gray-600 mb-4">
+                <li>Names</li>
+                <li>Email addresses</li>
+                <li>Phone numbers</li>
+                <li>Physical addresses</li>
+                <li>Payment information</li>
+                <li>Any other personal identifiable information</li>
+              </ul>
+          
+              <p class="text-gray-600 mb-4">We encourage you to use our services without concern, as your privacy is of utmost importance to us. If you have any questions or concerns regarding your privacy or our policies, please feel free to contact us.</p>
+            </div>
+           
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">How We Use Your Information</h3>
+          <p class="text-gray-600 mb-4">The personal data we collect is used for the following purposes:</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4">
+            <li><strong>Providing and improving services:</strong> We use your information to deliver the services or products you have requested and to ensure the best possible experience on our platform.</li>
+            <li><strong>Customer support:</strong> Your data helps us respond to your inquiries, troubleshoot problems, and provide assistance.</li>
+            <li><strong>Marketing and communications:</strong> With your permission, we may send you promotional content, updates, or newsletters. You can choose to opt out of marketing communications at any time by following the instructions provided in the email.</li>
+            <li><strong>Personalization:</strong> We may use your information to personalize your experience, such as displaying content tailored to your preferences and improving the functionality of our services.</li>
+            <li><strong>Analytics:</strong> Non-personal data is used for analyzing user behavior, improving website performance, and understanding how visitors engage with our services.</li>
+          </ul>
+      
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">Sharing Your Information</h3>
+          <p class="text-gray-600 mb-4">We do not sell or rent your personal information to third parties. However, we may share your data with trusted third-party service providers to help us deliver our services. These third parties include hosting services, payment processors, and email delivery platforms. We ensure that any third parties we work with comply with stringent data protection standards and use your information only for the agreed-upon purposes.</p>
+          <p class="text-gray-600 mb-4">In some cases, we may be required to disclose your information to legal authorities in response to legal requests, such as subpoenas, or to comply with applicable laws. We will only disclose the minimum necessary information in such cases.</p>
+      
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">Cookies and Tracking Technologies</h3>
+          <p class="text-gray-600 mb-4">Our website uses cookies and similar tracking technologies to enhance your browsing experience. Cookies are small files that are stored on your device and help us remember your preferences, such as language settings or login information. They also enable us to track your interactions with our site, allowing us to improve our services based on user behavior.</p>
+          <p class="text-gray-600 mb-4">You can control or disable cookies through your browser settings. Please note that disabling cookies may affect certain features of our website, making it less personalized and functional.</p>
+      
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">Security of Your Data</h3>
+          <p class="text-gray-600 mb-4">We prioritize the security of your personal information. We implement a variety of security measures, including encryption, firewalls, and secure servers, to protect your data from unauthorized access, misuse, or disclosure. Despite our best efforts, no data transmission over the internet can be guaranteed to be completely secure, and we cannot fully eliminate all risks associated with data processing.</p>
+      
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">Your Rights</h3>
+          <p class="text-gray-600 mb-4">Depending on your location, you may have certain rights regarding your personal data. These rights may include:</p>
+          <ul class="list-disc list-inside text-gray-600 mb-4">
+            <li>The right to access the personal information we hold about you.</li>
+            <li>The right to request corrections to any inaccurate or outdated information.</li>
+            <li>The right to request the deletion of your data, subject to certain legal limitations.</li>
+            <li>The right to restrict or object to the processing of your personal data.</li>
+          </ul>
+          <p class="text-gray-600 mb-4">To exercise any of these rights, please contact us at <a href="mailto:paln8n7634@gmail.com" class="text-indigo-600">paln8n7634@gmail.com</a>, and we will respond to your request in accordance with applicable privacy laws.</p>
+      
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">Data Retention</h3>
+          <p class="text-gray-600 mb-4">We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required by law. Once your data is no longer needed, it will be securely deleted or anonymized.</p>
+      
+          <h3 class="text-2xl font-semibold text-gray-800 mt-6 mb-4">Contact Us</h3>
+          <p class="text-gray-600 mb-4">If you have any questions or concerns about this Privacy Policy or how your data is handled, feel free to contact us at <a href="mailto:paln8n7634@gmail.com" class="text-indigo-600">paln8n7634@gmail.com</a>. We are committed to ensuring your privacy and will address your concerns promptly.</p>
+      
+          <p class="text-gray-600 mb-4">This Privacy Policy is effective as of [Insert Date]. We may update this policy from time to time to reflect changes in our practices or legal requirements. We encourage you to review this page periodically for the latest updates.</p>
+        </div>
+      </section>
+      
+
+
+
+ 
+                                              
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </body>
+</html>

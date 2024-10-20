@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100">
+    <nav
+      class="bg-white :bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 :border-gray-600"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span class="text-3xl font-bold">VEx</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            style="background: transparent !important; border: 1px solid black"
+            type="button"
+            class="text-black rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-3 text-center"
+          >
+            <a href="./about.html"> Get started </a>
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 :text-gray-400 :hover:bg-gray-700 :focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white :bg-gray-800 md: :bg-gray-900 :border-gray-700"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="block py-2 px-3 text-black rounded md:bg-transparent md:text-black md:p-0 md: :text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >About</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="./contact.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center uppercase justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto -:text-white md:-:hover:text-blue-500 -:focus:text-white -:border-gray-700 -:hover:bg-gray-700 md:-:hover:bg-transparent"
+              >
+                ALL Calculator
+                <svg
+                  style="margin-top: 5px"
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 flex hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 -:bg-gray-700 -:divide-gray-600 mydrop"
+                data-popper-placement="bottom"
+                style="
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  margin: 0px;
+                  transform: translate3d(874.5px, 60.5px, 0px);
+                "
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 -:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="./pointCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Points Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./AnorexicBMICalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Anorexic BMI Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./OverweightCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Overweight Calculator</a
+                    >
+                  </li>
+                  
+                  <li>
+                    <a
+                      href="./PaceCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Pace Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BodySurfaceAreaCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Surface Area Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./BodyTypeCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Type Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./FatIntakeCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Fat Intake Calculator</a
+                    >
+                  </li>
+                   
+                  <li>
+                    <a
+                      href="./ProteinCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Protein Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CarbohydrateCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Carbohydrate Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CaloriesBurnedCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Calories Burned Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./HealthyWeightCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Healthy Weight Calculator
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./LeanBodyMassCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Lean Body Mass Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./ArmyBodyFatCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Army Body Fat Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BMRCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >BMR Calculator
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./BodyFatCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Fat Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BMICalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >BMI Calculator</a
+                    >
+                  </li>
+                   
+                  <li>
+                    <a
+                      href="./CalorieCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Calorie Calculator</a
+                    >
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+     
+
+    
+    <section class="lg:pt-20 pt-0 h-full">
+      <div
+        class="rounded-2xl bg-indigo-50 py-10 overflow-hidden m-5 lg:m-0 2xl:py-16 xl:py-8  lg:rounded-tl-2xl lg:rounded-bl-2xl ">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-14 items-center lg:grid-cols-12 lg:gap32">
+            <div class="w-full xl:col-span-5 lg:col-span-6 2xl:-mx-5 xl:-mx-0">
+              <div class="flex items-center text-sm font-medium text-gray-500 justify-center lg:justify-start">
+                <span class="bg-indigo-600 py-1 px-3 rounded-2xl text-xs font-medium text-white mr-3 ">#1</span>
+                ABOUT US
+              </div>
+              <h1 class="py-8 text-center text-gray-900 font-bold font-manrope text-5xl lg:text-left leading-[70px]">
+                Track Your Health, Nutrition, and <span class="text-indigo-600">Goals</span>
+              </h1>
+              <p class=" text-gray-500 text-lg text-center lg:text-left">
+                Welcome to our Fitness Calculator tool, your all-in-one solution for tracking and optimizing your health and fitness goals. We understand that staying fit involves more than just exercise—it’s about balancing your diet, monitoring your progress, and making informed decisions about your body’s needs.
+              </p>
+             
+              <div class="flex items-center flex-col lg:flex-row mt-10">
+                <div class="flex items-center">
+                  <img src="https://pagedone.io/asset/uploads/1694846673.png" alt="Rounded image "
+                    class="border-2 border-solid border-indigo-50 rounded-full relative z-50 object-cover" />
+                  <img src="https://pagedone.io/asset/uploads/1694846691.png" alt="Rounded image"
+                    class="border-2 border-solid border-indigo-50 rounded-full relative z-30 -ml-3 object-cover" />
+                  <img src="https://pagedone.io/asset/uploads/1694846704.png" alt="Rounded image"
+                    class="border-2 border-solid border-indigo-50 rounded-full relative z-20 -ml-3 object-cover" />
+                </div>
+                <span class="mt-3 text-base text-gray-600 font-medium lg:ml-3">People have joined</span>
+              </div>
+            </div>
+            <div class="w-full xl:col-span-7  lg:col-span-6 block">
+              <div class="w-full  sm:w-auto lg:w-[60.8125rem] xl:ml-16">
+                <img style="opacity: 1;filter: brightness(70%);" src="https://cdn.prod.website-files.com/61a7bda474dfe11266bb0b74/637d17bd73f4d58aed616c69_ATC-spottswood_nov2022-5.png" alt="Dashboard image" class="rounded-l-3xl object-cover"
+                  class="w-full  lg:h-auto ">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    
+
+
+
+ 
+                                              
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </body>
+</html>
