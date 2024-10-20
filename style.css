@@ -106,11 +106,7 @@ html {
   margin-top: 30px;
 }
 
-@media (min-width: 1068px) {
-  .toollist {
-    grid-template-columns: repeat(5, minmax(240px, 1fr));
-  }
-}
+ 
 .singletools {
   min-height: 260px;
   background: white;
@@ -242,57 +238,80 @@ html {
   display: flex;
   flex-flow: column;
   align-items: start;
-   justify-content: center;
+  justify-content: center;
   margin: auto;
-   border-radius: 15px !important;
+  border-radius: 15px !important;
   background-color: #fff;
-           
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.calbox > div{
-   width: 100%;
-   display: flex;
-   align-items: center;
-   gap: 10px;
-   flex-wrap: wrap;
+.calbox > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .calbox input {
   height: 45px;
   border: 1px solid black;
   padding: 5px 20px;
- 
-   border-radius: 50px;
- }
+
+  border-radius: 50px;
+}
 
 @media (max-width: 710px) {
   .calbox {
     width: 99% !important;
   }
-  .heromain{
-   padding-top: 70px;
+  .bgmain {
+    background-position-x: 100% !important;
+    background-size: 150% 250px !important;
+  }
+  .heromain {
+    padding-top: 210px !important;
   }
   .heromain h1 {
-   font-size: 1.7rem !important;
-   text-align: center;
+    font-size: 1.7rem !important;
+    text-align: center;
   }
-  .heromain p{
-   font-size: 1rem !important;
-   text-align: center;
+  .heromain p {
+    font-size: 1rem !important;
+    text-align: center;
   }
-  .heromain h1 br{
-   display: none !important;
+  .heromain h1 br {
+    display: none !important;
   }
-  .heromain p br{
-   display: none !important;
+  .heromain p br {
+    display: none !important;
   }
 }
 
 #result {
-   margin-top: 10px;
-   font-weight: bold;
-   text-align: center;
-   width: 100%;
-   display: grid;
-   place-items: center;
-   
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.cont div {
+  border: 1px solid rgba(0, 0, 0, 0.337);
+}
+.cont div:nth-child(odd) {
+  background: rgba(245, 245, 220, 0.266);
+}
+.cont div:nth-child(even) {
+  background: #eae1f6b5;
+}
+
+@media (max-width: 510px) {
+  .calbox {
+    width: 99% !important;
+  }
+  .bgmain {
+    background-position-x: 100% !important;
+    background-size: 200% 250px !important;
+  }
 }
