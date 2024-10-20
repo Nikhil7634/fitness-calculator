@@ -6,9 +6,6 @@
     <title>Fitness Calculator</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
-
-     
   </head>
 
   <body class="bg-gray-100">
@@ -18,7 +15,10 @@
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
-        <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a
+          href="./index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <span class="text-3xl font-bold">VEx</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -145,7 +145,7 @@
                       >Overweight Calculator</a
                     >
                   </li>
-                  
+
                   <li>
                     <a
                       href="./PaceCalculator.html"
@@ -175,7 +175,7 @@
                       >Fat Intake Calculator</a
                     >
                   </li>
-                   
+
                   <li>
                     <a
                       href="./ProteinCalculator.html"
@@ -243,7 +243,7 @@
                       >BMI Calculator</a
                     >
                   </li>
-                   
+
                   <li>
                     <a
                       href="./CalorieCalculator.html"
@@ -251,7 +251,6 @@
                       >Calorie Calculator</a
                     >
                   </li>
-                  
                 </ul>
               </div>
             </li>
@@ -260,118 +259,142 @@
       </div>
     </nav>
 
+    <section
+      class="pt-32 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover calcsection"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">
+        <h1
+          class="max-w-2xl mx-auto text-center font-manrope font-bold text-4xl text-gray-900 mb-5 md:text-5xl leading-[50px]"
+        >
+          Pace
+          <span
+            class="text-transparent bg-gradient-to-br bg-clip-text from-teal-500 via-indigo-500 to-sky-500 dark:from-teal-200 dark:via-indigo-300 dark:to-sky-500"
+          >
+            Calculator</span
+          >
+        </h1>
 
+        <p
+          class="max-w-sm mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9"
+        >
+          The Pace Calculator determines your speed per mile or kilometer during
+          running or walking, helping to track and optimize performance.
+        </p>
 
-  
-  <section
-    class="pt-32 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover calcsection"
-  >
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">
-       
-      <h1
-        class="max-w-2xl mx-auto text-center font-manrope font-bold text-4xl text-gray-900 mb-5 md:text-5xl leading-[50px]"
-      >
-      
+        <div class="flex justify-center items-center">
+          <div class="container max-w-md p-6 bg-white rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Pace Calculator
+            </h2>
 
-      Pace 
-        <span class="text-transparent bg-gradient-to-br bg-clip-text from-teal-500 via-indigo-500 to-sky-500 dark:from-teal-200 dark:via-indigo-300 dark:to-sky-500"> Calculator</span>
-      </h1>
-      
-      <p
-        class="max-w-sm mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9"
-      >
-      
+            <!-- Distance Input -->
+            <div class="mb-5">
+              <label
+                for="distance"
+                class="block text-sm font-semibold text-gray-700 mb-2"
+                >Distance (miles or kilometers):</label
+              >
+              <input
+                id="distance"
+                type="number"
+                placeholder="Enter Distance"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+            </div>
 
- 
- 
+            <!-- Time Inputs: Hours, Minutes, Seconds -->
+            <div class="grid grid-cols-3 gap-4 mb-6">
+              <div>
+                <label
+                  for="hours"
+                  class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Hours:</label
+                >
+                <input
+                  id="hours"
+                  type="number"
+                  placeholder="Hours"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+              </div>
+              <div>
+                <label
+                  for="minutes"
+                  class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Minutes:</label
+                >
+                <input
+                  id="minutes"
+                  type="number"
+                  placeholder="Minutes"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+              </div>
+              <div>
+                <label
+                  for="seconds"
+                  class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Seconds:</label
+                >
+                <input
+                  id="seconds"
+                  type="number"
+                  placeholder="Seconds"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+              </div>
+            </div>
 
-       The Pace Calculator determines your speed per mile or kilometer during running or walking, helping to track and optimize performance.
-        
-       </p>
-     
-       <div class="flex justify-center items-center ">
-        <div class="container max-w-md p-6 bg-white rounded-lg shadow-lg">
-          <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Pace Calculator</h2>
-      
-          <!-- Distance Input -->
-          <div class="mb-5">
-            <label for="distance" class="block text-sm font-semibold text-gray-700 mb-2">Distance (miles or kilometers):</label>
-            <input id="distance" type="number" placeholder="Enter Distance" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <!-- Calculate Pace Button -->
+            <input
+              onclick="calculate()"
+              type="button"
+              value="Calculate Pace"
+              class="w-full py-3 px-5 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-all duration-300 cursor-pointer mb-4"
+            />
+
+            <!-- Result Output -->
+            <div
+              id="result"
+              class="mt-4 text-center text-lg text-gray-800"
+            ></div>
           </div>
-      
-          <!-- Time Inputs: Hours, Minutes, Seconds -->
-          <div class="grid grid-cols-3 gap-4 mb-6">
-            <div>
-              <label for="hours" class="block text-sm font-semibold text-gray-700 mb-2">Hours:</label>
-              <input id="hours" type="number" placeholder="Hours" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-            </div>
-            <div>
-              <label for="minutes" class="block text-sm font-semibold text-gray-700 mb-2">Minutes:</label>
-              <input id="minutes" type="number" placeholder="Minutes" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-            </div>
-            <div>
-              <label for="seconds" class="block text-sm font-semibold text-gray-700 mb-2">Seconds:</label>
-              <input id="seconds" type="number" placeholder="Seconds" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-            </div>
-          </div>
-      
-          <!-- Calculate Pace Button -->
-          <input onclick="calculate()" type="button" value="Calculate Pace" class="w-full py-3 px-5 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-all duration-300 cursor-pointer mb-4" />
-      
-          <!-- Result Output -->
-          <div id="result" class="mt-4 text-center text-lg text-gray-800"></div>
         </div>
       </div>
-      
-      
-      
-      
-  </section>
-                                          
-
-   
-
-    
-     
-     
-
-
-
-    
-
-
-
-
-  
-                                              
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <script>
-        function calculate() {
-            var distance = parseFloat(document.getElementById('distance').value);
-            var hours = parseFloat(document.getElementById('hours').value);
-            var minutes = parseFloat(document.getElementById('minutes').value);
-            var seconds = parseFloat(document.getElementById('seconds').value);
+      function calculate() {
+        var distance = parseFloat(document.getElementById("distance").value);
+        var hours = parseFloat(document.getElementById("hours").value);
+        var minutes = parseFloat(document.getElementById("minutes").value);
+        var seconds = parseFloat(document.getElementById("seconds").value);
 
-            if (isNaN(distance) || isNaN(hours) || isNaN(minutes) || isNaN(seconds)) {
-                document.getElementById('result').innerHTML = 'Please enter valid values for distance and time.';
-                return;
-            }
-
-            var totalMinutes = hours * 60 + minutes + seconds / 60;
-            var pacePerMile = totalMinutes / distance;
-
-            var paceMinutes = Math.floor(pacePerMile);
-            var paceSeconds = Math.round((pacePerMile - paceMinutes) * 60);
-
-            document.getElementById('result').innerHTML = 'Your pace is ' + paceMinutes + ' minutes and ' + paceSeconds + ' seconds per mile.';
+        if (
+          isNaN(distance) ||
+          isNaN(hours) ||
+          isNaN(minutes) ||
+          isNaN(seconds)
+        ) {
+          document.getElementById("result").innerHTML =
+            "Please enter valid values for distance and time.";
+          return;
         }
+
+        var totalMinutes = hours * 60 + minutes + seconds / 60;
+        var pacePerMile = totalMinutes / distance;
+
+        var paceMinutes = Math.floor(pacePerMile);
+        var paceSeconds = Math.round((pacePerMile - paceMinutes) * 60);
+
+        document.getElementById("result").innerHTML =
+          "Your pace is " +
+          paceMinutes +
+          " minutes and " +
+          paceSeconds +
+          " seconds per mile.";
+      }
     </script>
   </body>
 </html>
-
-
-
-
-
- 

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100">
+    <nav
+      class="bg-white :bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 :border-gray-600"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="./index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <span class="text-3xl font-bold">VEx</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            style="background: transparent !important; border: 1px solid black"
+            type="button"
+            class="text-black rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-3 text-center"
+          >
+            <a href="./about.html"> Get started </a>
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 :text-gray-400 :hover:bg-gray-700 :focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white :bg-gray-800 md: :bg-gray-900 :border-gray-700"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="block py-2 px-3 text-black rounded md:bg-transparent md:text-black md:p-0 md: :text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >About</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="./contact.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md: :hover:text-blue-500 :text-white :hover:bg-gray-700 :hover:text-white md: :hover:bg-transparent :border-gray-700"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center uppercase justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto -:text-white md:-:hover:text-blue-500 -:focus:text-white -:border-gray-700 -:hover:bg-gray-700 md:-:hover:bg-transparent"
+              >
+                ALL Calculator
+                <svg
+                  style="margin-top: 5px"
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 flex hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 -:bg-gray-700 -:divide-gray-600 mydrop"
+                data-popper-placement="bottom"
+                style="
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  margin: 0px;
+                  transform: translate3d(874.5px, 60.5px, 0px);
+                "
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 -:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="./pointCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Points Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./AnorexicBMICalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Anorexic BMI Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./OverweightCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Overweight Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./PaceCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Pace Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BodySurfaceAreaCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Surface Area Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./BodyTypeCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Type Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./FatIntakeCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Fat Intake Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./ProteinCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Protein Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CarbohydrateCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Carbohydrate Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CaloriesBurnedCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Calories Burned Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./HealthyWeightCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Healthy Weight Calculator
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./LeanBodyMassCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Lean Body Mass Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./ArmyBodyFatCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Army Body Fat Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BMRCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >BMR Calculator
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="./BodyFatCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Body Fat Calculator</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./BMICalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >BMI Calculator</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="./CalorieCalculator.html"
+                      class="block px-4 py-2 hover:bg-gray-100 -:hover:bg-gray-600 -:hover:text-white"
+                      >Calorie Calculator</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="pt-32 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover calcsection min-h-screen"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">
+        <h1
+          class="max-w-2xl mx-auto text-center font-manrope font-bold text-4xl text-gray-900 mb-5 md:text-5xl leading-[50px]"
+        >
+        Healthy Weight 
+          <span
+            class="text-transparent bg-gradient-to-br bg-clip-text from-teal-500 via-indigo-500 to-sky-500 dark:from-teal-200 dark:via-indigo-300 dark:to-sky-500"
+          >
+            Calculator</span
+          >
+        </h1>
+
+        <p
+          class="max-w-sm mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9"
+        >
+        
+ The Healthy Weight Calculator assesses ideal weight ranges based on height, age, and gender, promoting awareness of healthy body weight for overall well-being.
+          
+         </p>
+
+         <div class="flex justify-center items-center ">
+            <div class="container max-w-lg p-6 bg-white rounded-lg shadow-lg">
+              <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Healthy Weight Calculator</h2>
+          
+              <!-- Height Input -->
+              <div class="mb-5 text-left">
+                <label for="height" class="block text-sm font-semibold text-gray-700 mb-2">Height (cm):</label>
+                <input id="height" type="number" placeholder="Enter Height" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+              </div>
+          
+              <!-- Gender Select -->
+              <div class="mb-5 text-left">
+                <label for="gender" class="block text-sm font-semibold text-gray-700 mb-2">Gender:</label>
+                <select id="gender" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+          
+              <!-- Calculate Button -->
+              <input onclick="calculate()" type="button" value="Calculate Healthy Weight" class="w-full py-3 px-5 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-all duration-300 cursor-pointer mb-4" />
+          
+              <!-- Result -->
+              <div id="result" class="mt-4 text-center text-lg text-gray-800"></div>
+            </div>
+          </div>
+          
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script>
+        function calculate() {
+            var height = parseFloat(document.getElementById('height').value);
+            var gender = document.getElementById('gender').value;
+
+            if (isNaN(height)) {
+                document.getElementById('result').innerHTML = 'Please enter a valid height.';
+                return;
+            }
+
+            var healthyWeight;
+            if (gender === 'male') {
+                healthyWeight = (height - 100) - ((height - 100) * 0.10);
+            } else {
+                healthyWeight = (height - 100) - ((height - 100) * 0.15);
+            }
+
+            document.getElementById('result').innerHTML = 'Your healthy weight range is between ' + healthyWeight.toFixed(2) + ' kg and ' + (healthyWeight + 10).toFixed(2) + ' kg';
+        }
+    </script>
+  </body>
+</html>
